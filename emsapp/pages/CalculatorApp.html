@@ -1,0 +1,224 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js practice</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        input:hover {
+            background-color: rgb(227, 227, 46);
+            color: red;
+        }
+
+        body {
+
+            background-color: aquamarine;
+        }
+
+        section {
+            align-self: center;
+            background-color: lightgreen;
+
+            width: 500px;
+            height: 300px;
+            margin-top: 200px;
+            margin-left: 520px;
+            font-size: medium;
+            padding-top: 10px;
+            padding-left: 35px;
+            padding-bottom: 10px;
+            border-color: black;
+            border: 10px;
+            border-radius: 50px;
+        }
+    </style>
+
+</head>
+
+<body onload="greet()">
+    <section>
+        <h1 style="padding-left: 35px;">CALCULATER FORM</h1>
+        <form name="f1" style="align-content: center; ">
+            <LAbel for="n1" style="margin-left:60px; ;">Number 1:</LAbel>
+            <input type="number" id="n1" name="n1" autofocus><span id="w"></span> <br><br>
+            <LAbel for="n2" style="margin-left: 60px;">Number 2:</LAbel>
+            <input type="number" name="n2" id="n2"><span id="e"></span><br><br>
+            <div class="buttons" style="padding-left: 30px;">
+                <input type="button" onclick="performadd()" class="btn btn-primary" value="ADD">
+                <input type="button" onclick="performsub()" class="btn btn-primary" value="SUBTRACT">
+                <input type="button" onclick="performmul()" class="btn btn-primary" value="PRODUCT">
+                <input type="button" onclick="performdiv()" class="btn btn-primary" value="DIVISION">
+            </div>
+        </form>
+        <p>Result:<span id="s"></span></p>
+        <p>STATUS: <span id="p">NO Operation</span></p>
+    </section>
+    <script>
+        function greet() {
+            alert("HI, Please Fill Out this Form")
+        }
+
+        function performadd() {
+
+            var a = document.f1.n1.value;
+            var b = document.f1.n2.value;
+            if (a != 0 && b != 0) {
+                a = parseInt(a);
+                b = parseInt(b);
+                var RES = a + b;
+                console.log(RES)
+                var s = document.getElementById("s")
+                s.innerHTML = RES;
+                document.getElementById("p").innerHTML = RES = 'USER HAS PERFORMED ADDITION';
+            } else {
+
+
+                if (a == 0) {
+                    document.getElementById('n1').setAttribute('style', "border:1px solid red");
+                    setTimeout(() => document.getElementById('n1').setAttribute('style', "border:1px solid white"),
+                        2000)
+                    document.getElementById("w").setAttribute('style', 'color:red ;font-size:15px')
+                    document.getElementById("w").innerHTML = "   *input is required*"
+                    setTimeout(() => {
+                        document.getElementById("w").innerHTML = ""
+                    }, 2000);
+
+                }
+                if (b == 0) {
+                    document.getElementById('n2').setAttribute('style', "border:1px solid red");
+                    setTimeout(() => document.getElementById('n2').setAttribute('style', "border:1px solid white"),
+                        2000)
+                    document.getElementById("e").setAttribute('style', 'color:red ;font-size:15px')
+                    document.getElementById("e").innerHTML = "   *input is required*"
+                    setTimeout(() => {
+                        document.getElementById("e").innerHTML = ""
+                    }, 2000);
+
+                }
+            }
+
+        }
+
+        function performsub() {
+            var a = document.f1.n1.value;
+            var b = document.f1.n2.value;
+            if (a != 0 && b != 0) {
+                a = parseInt(a);
+                b = parseInt(b);
+                var RES = a - b;
+                console.log(RES)
+                var s = document.getElementById("s")
+                s.innerHTML = RES
+                document.getElementById("p").innerHTML = RES = 'USER HAS PERFORMED SUBTRACTION';
+            } else {
+                if (a == 0) {
+                    document.getElementById('n1').setAttribute('style', "border:1px solid red");
+                    setTimeout(() => document.getElementById('n1').setAttribute('style', "border:1px solid white"),
+                        2000)
+                    document.getElementById("w").setAttribute('style', 'color:red ;font-size:15px')
+                    document.getElementById("w").innerHTML = "   *input is required*"
+                    setTimeout(() => {
+                        document.getElementById("w").innerHTML = ""
+                    }, 2000);
+
+                }
+                if (b == 0) {
+                    document.getElementById('n2').setAttribute('style', "border:1px solid red");
+                    setTimeout(() => document.getElementById('n2').setAttribute('style', "border:1px solid white"),
+                        2000)
+                    document.getElementById("e").setAttribute('style', 'color:red ;font-size:15px')
+                    document.getElementById("e").innerHTML = "   *input is required*"
+                    setTimeout(() => {
+                        document.getElementById("e").innerHTML = ""
+                    }, 2000);
+
+                }
+            }
+
+        }
+
+        function performmul() {
+            var a = document.f1.n1.value;
+            var b = document.f1.n2.value;
+            if (a != 0 && b != 0) {
+                a = parseInt(a);
+                b = parseInt(b);
+                var RES = a * b;
+                console.log(RES)
+                var s = document.getElementById("s")
+                s.innerHTML = RES
+                document.getElementById("p").innerHTML = RES = 'USER HAS PERFORMED MULTIPLICATOIN';
+            } else {
+
+
+                if (a == 0) {
+                    document.getElementById('n1').setAttribute('style', "border:1px solid red");
+                    setTimeout(() => document.getElementById('n1').setAttribute('style', "border:1px solid white"),
+                        2000)
+                    document.getElementById("w").setAttribute('style', 'color:red ;font-size:15px')
+                    document.getElementById("w").innerHTML = "   *input is required*"
+                    setTimeout(() => {
+                        document.getElementById("w").innerHTML = ""
+                    }, 2000);
+
+                }
+                if (b == 0) {
+                    document.getElementById('n2').setAttribute('style', "border:1px solid red");
+                    setTimeout(() => document.getElementById('n2').setAttribute('style', "border:1px solid white"),
+                        2000)
+                    document.getElementById("e").setAttribute('style', 'color:red ;font-size:15px')
+                    document.getElementById("e").innerHTML = "   *input is required*"
+                    setTimeout(() => {
+                        document.getElementById("e").innerHTML = ""
+                    }, 2000);
+
+                }
+            }
+        }
+
+        function performdiv() {
+            var a = document.f1.n1.value;
+            var b = document.f1.n2.value;
+            if (a != 0 && b != 0) {
+                a = parseInt(a);
+                b = parseInt(b);
+                var add = a / b;
+                console.log(add)
+                var s = document.getElementById("s")
+                s.innerHTML = add
+                document.getElementById("p").innerHTML = RES = 'USER HAS PERFORMED DIVISION';
+            } else {
+
+
+                if (a == 0) {
+                    document.getElementById('n1').setAttribute('style', "border:1px solid red");
+                    setTimeout(() => document.getElementById('n1').setAttribute('style', "border:1px solid white"),
+                        2000)
+                    document.getElementById("w").setAttribute('style', 'color:red ;font-size:15px')
+                    document.getElementById("w").innerHTML = "   *input is required*"
+                    setTimeout(() => {
+                        document.getElementById("w").innerHTML = ""
+                    }, 2000);
+
+                }
+                if (b == 0) {
+                    document.getElementById('n2').setAttribute('style', "border:1px solid red");
+                    setTimeout(() => document.getElementById('n2').setAttribute('style', "border:1px solid white"),
+                        2000)
+                    document.getElementById("e").setAttribute('style', 'color:red ;font-size:15px')
+                    document.getElementById("e").innerHTML = "   *input is required*"
+                    setTimeout(() => {
+                        document.getElementById("e").innerHTML = ""
+                    }, 2000);
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
