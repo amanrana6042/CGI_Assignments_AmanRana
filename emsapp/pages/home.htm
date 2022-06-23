@@ -1,0 +1,84 @@
+<!DOCTYPE html5>
+<html lang="en">
+    <head>
+        <title>home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <h2>
+            HTML FORM
+        </h2>
+        <form style="align-items: center; ">
+            <label for="uname">Name:</label>
+            <input type="text" id ="uname"placeholder="Name" autofocus><br/><br/>
+            <label for="Gender">Gender:</label>
+            <input type="radio" name="gndr" value="Male" id="Male" >
+            <label for="Male">Male</label>
+            <input type="radio" name ="gndr" value="Female" id="Female">
+            <label for="Female">Female</label><br/><br/>
+            <label for="age">Age:</label>
+            <input type="number" min =18 max =59 id ="age"placeholder="Age"><br/><br/>
+            <label for="email">Email:</label>
+            <input type="email" id ="email"placeholder="Email"><br/><br/>
+            <label for="no">Mobile No.:</label>
+            <input type="text" id ="no"placeholder="Mobile Number"><br/><br/>
+            <label for="cntry">Country:</label>
+            <select name="" id ="">
+
+               <option value="Austria">Austria</option>
+                <option value="India"> India</option>
+            </select><br/><br/>
+                 <label for="pwd">Password:</label>
+            <input type="password" id ="pwd"placeholder="Password:"><br/><br/>
+            <label for="addr">Address:</label>
+            <textarea cols="30" rows=""></textarea><br/><br/>
+            
+            <label for="text">Technology:</label>
+            <input list="tech">
+            <datalist id="tech">
+                <option >Servlet</option>
+                <option >JSP</option>
+            </datalist> <br/><br/>
+            
+            
+            <input type="submit" value="SIGNUP">
+            <input type="reset" value="RESET">
+            
+        </form>
+        <h2>Table</h2>
+        <Table border=1px>
+            
+            <tr>
+                <th>Eid</th>
+                <th>Ename</th>
+                <th>Esalary</th>
+                <th colspan="2">Operation</th>
+            </tr>
+            <tr>
+                <td>1001</td>
+                <td>Raju</td>
+                <td>30000</td>
+              
+                <td><a href="#">EDIT</a></td>
+                <td><a href="#">DELETE</a></td>
+            </tr>
+            <tr>
+                <td>1002</td>
+                <td>Sunil</td>
+                <td>45000</td>
+                <td><a href="#">EDIT</a></td>
+                <td><a href="#">DELETE</a></td>
+            </tr>
+            <tr>
+                <td>1003</td>
+                <td>Rajeev</td>
+                <td>56000</td>
+                <td><a href="#">EDIT</a></td>
+                <td><a href="#">DELETE</a></td>
+            </tr>
+        </Table>
+    </body>
